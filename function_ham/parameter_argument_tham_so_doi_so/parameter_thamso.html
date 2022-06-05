@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="parameter_thamso.js"></script>
+    <title>Parameter Tham số</title>
+</head>
+<body>
+    <script>
+        document.write('Không liên quan đến bài tham số, đoạn code dưới đây là bài toán tử:' + '<br>');
+        var a = 1;
+        var b = '1';
+        if(a == b){
+            document.write('1 giống "1" ' + '<br>');
+            document.write('1 và "1" là không cùng một kiểu dữ liệu' + '<br>');
+            document.write('cho dù a và b là 2 kiểu dữ liệu ' + typeof a +' và ' + typeof b + '<br>')
+            document.write('nhưng với toán tử == thì \"1" giống với 1 ')
+        }   
+        else{
+            document.write('a không bằng b' + '<br>');
+            document.write('a và b là khác kiểu dữ liệu');
+
+        }
+        if(a === b){
+            document.write('Với toán tử === thì "1" khác với 1')
+        }
+
+    </script>
+    
+</body>
+</html>
