@@ -134,7 +134,7 @@
 
     </script> -->
 
-    <script>
+    <!-- <script>
         // Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, 
         //                                                             nhập/tạo phần tử số nguyên V. 
         // Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng 
@@ -209,11 +209,59 @@
         document.write(arrayNumbers);
 
 
-    </script>
+    </script> -->
 
 
     <!-- <script>
 
     </script> -->
+
+    <!-- <!doctype html>
+    <html>
+    <head>
+        <title>Arguments Array</title>
+    </head>
+    <body>
+    <script type="text/javascript">
+    function myFunction() {
+        let firstArg = arguments[0];
+        let secondArg = arguments[1];
+        alert("firstArg is: " + firstArg);
+        alert("secondArg is: " + secondArg);
+    }
+    myFunction("hello","world"); 
+    </script>  -->
+
+    <!-- <script>
+        function processConfirm(answer){
+            let result = '';
+            if (answer){
+                result ="Excellent. We'll play a nice game of chess.";
+            }
+            else{
+                result = 'Maybe later then.';
+            }
+            return result;
+        }
+        let confirmAnswer = confirm('Shall we play a game?');
+        let theAnswer = processConfirm(confirmAnswer);
+        alert(theAnswer);
+    </script> -->
+
+    <p>
+        <label>Fahrenheit</label>
+        <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+        oninput="temperatureConverter(this.value)"
+        onchange="temperatureConverter(this.value)">
+    </p>
+    <p>Celsius: <span id="outputCelsius"></span></p>
+    <script>
+        function temperatureConverter(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
+    }
+    </script>
+    
+
 </body>
 </html>

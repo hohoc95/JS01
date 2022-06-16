@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- [Thực hành] Chuyển đổi nhiệt độ -->
+    <!-- <form>
+        <p>
+            <label for="inputFahrenheit">Fahrenheit</label>
+            <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+                   oninput="temperatureConverter(this.value)"
+                   onchange="temperatureConverter(this.value)">
+        </p>
+        <p>Celsius: <span id="outputCelsius"></span></p>
+    </form>
+
+      <script>
+        function temperatureConverter(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
+    }
+    </script> -->
+        
+
+    <!-- [Thực hành] Tìm giá trị nhỏ nhất của mảng -->
+    <!-- <script>
+        function minArray(arr) {
+            if(arr.length == 0)
+            return -1;
+            let min = arr[0];
+
+            for(let i = 1; i < arr.length; i++){
+                if(arr[i] < min){
+                    min = arr[i];
+                }
+            }
+            return min;
+        }
+        let arr1 = [];
+        let min = minArray(arr1);
+        alert(min);
+    </script> -->
+
+    <!-- [Bài tập] Hàm kiểm tra số nguyên tố -->
+    <!-- <script>
+        let number = parseInt(prompt("Nhập số cần check "));
+        isPrime(number)
+
+        function isPrime(number){
+            let count = 0; // đếm số ước của số đang check
+            let isPrime = false;
+
+            if (number == 0) {
+                alert(number + " không là số nguyên tố")
+            } else {
+                for ( let i = 1; i <= number; i++) {
+                    if(number % i == 0) {
+                        count += 1;
+                    }
+                }
+                
+                if (count ==2 ) {
+                    isPrime = true
+                }
+
+                if (isPrime) {
+                    alert(number + " là số nguyên tố")
+                } else {
+                    alert (number + " không là số nguyên tố")
+                }
+            }
+        }
+    </script> -->
+
+    <!-- [Bài tập] Chuyển đổi giữa feet và meters -->
+    <!-- <script>
+        let feet = prompt("Nhập feet: ");
+        let meter = prompt("Nhập meter: ");
+
+        function feetToMeter(feet) {
+            feet = 0.305 * feet;
+            return feet;
+        }
+        meterConverted = feetToMeter(feet); 
+
+        function meterToFeet(meter) {
+           meter = 3.279 * meter;
+            return meter;
+        }
+        feetConverted = meterToFeet(meter);
+        
+        document.write( feet + ' Feet bằng ' + meterConverted + ' meter' + '<br>' );
+        document.write( meter + ' Meter bằng ' + feetConverted + ' feet' +'<br>' );
+    </script> -->
+
+    <!-- Bài 1: Tạo hàm alertMessage() hiển thị hộp thoại chứa chuỗi  "Xin chao". 
+    Gọi hàm từ trong phần <body> của trang web. -->
+    <!-- <script>
+
+        function alertMessage(){
+            return alert('Xin chào');
+        }
+        alertMessage();
+
+    </script> -->
+
+    <!-- Bài 2: Tạo hàm nhận vào một đối số dạng số, 
+                            tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm. 
+    Gọi hàm từ trong phần <body> của trang web và hiển thị kết quả lên màn hình. -->
+    
+    <!-- <script>
+        let number = parseInt(prompt('Nhập vào 1 số:'));
+        let increaseNumber = 0;
+
+        function increase(number){
+            number++;
+            return number;
+
+        }
+        increaseNumber = increase(number);
+        document.write(increaseNumber)
+    </script> -->
+
+    <!-- Bài 3: Tạo hàm nhận vào hai tham số. 
+        Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, 
+                                                hiển thị hộp thoại thông báo cho người dùng. 
+        Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, 
+                                                trả về tổng của hai tham số. -->
+    <!-- <script>
+        let numberA = parseInt(prompt('Nhập vào số A'));
+        let numberB = parseInt(prompt('Nhập vào số B'));
+        let sum = 0;
+        function checkValue(numberA, numberB){
+            if(numberA > numberB){
+                alert('A > B');
+                return alert ;
+            }
+            else{
+                sum = numberA + numberB;
+                document.write('Tổng của hai số đã nhập là: ');
+                return sum;
+            }
+        }
+        let checked = checkValue(numberA, numberB);
+        document.write(checked);
+    </script> -->
+
+    <!-- Bài 4: Thêm các hàm alert() vào những vị trí thích hợp trong đoạn mã sau 
+                    để bạn có thể nhìn thấy giá trị của biến result trước và sau lời gọi hàm. 
+    Đoạn mã có dạng như sau: -->
+
+    <!-- <script>
+        function addNumbers() {
+            firstNum = 4;
+            secondNum = 8;
+            result = firstNum + secondNum;
+            return result;
+        }
+        result = 0;
+        alert('result = ' + result);
+        result = addNumbers(); 
+        alert('result = ' + result);
+    </script> -->
+
+    <!-- Bài 5 -->
+    <script>
+            let secretStar = prompt('Nhập vào cái tên ngôi sao!!:');
+            let galaxy1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+            let galaxy2 = ['UrsaMinor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'UrsaMajor', 'Leo'];
+            let galaxy3 ;
+            function checkStar(secretStar){
+                for (let i = 0 ; i < galaxy1.length ; i++){
+                    if(secretStar === galaxy1[i]){
+                        galaxy2.push(secretStar);
+                        break;
+                    }
+                    // else{
+                    //     document.write('Không có ngôi sao này!')
+                    //     break;
+                    // }
+                }
+                return galaxy2
+            }
+            galaxy2 = checkStar(secretStar);
+            if(galaxy2.length > 7){
+                document.write(galaxy2 + '<br>');
+                //document.write(galaxy2[7]);
+            }
+            else{
+                document.write('Không có ngôi sao này!')
+            }
+            
+
+    </script>
+</body>
+</html>
