@@ -165,7 +165,7 @@
     </script> -->
 
     <!-- Bài 5 -->
-    <script>
+    <!-- <script>
             let secretStar = prompt('Nhập vào cái tên ngôi sao!!:');
             let galaxy1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
             let galaxy2 = ['UrsaMinor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'UrsaMajor', 'Leo'];
@@ -193,6 +193,42 @@
             }
             
 
+    </script> -->
+
+
+    <script>
+        //3. Viết 1 hàm nhận vào 1 số nguyên duy nhất hàm trả về mảng số nguyên từ 0 đến số được truyền vào
+        //          và phải thỏa mãn 2 yêu cầu:
+        //          thứ nhất số đó thuộc dãy fibonacci , thứ 2 số đó phải là số nguyên tố.
+        // In ra mảng đấy.
+
+        let number = parseInt(prompt('Nhập vào 1 số nguyên:'));
+        let result = [];
+
+        function numberFibonacciPrime(number) {
+            let seed1 = 0;
+            let seed2 = 1;
+            let seed3 = seed1 + seed2;
+            let array = [];
+
+            for(let seed1 = 1; seed1 <= number; seed1++){
+                let divisor = 0;
+                for (let j = 1; j <= seed3; j++) {
+                    if (seed3 % j === 0) {
+                        divisor += 1;
+                    }
+                }
+                if (divisor === 2 && seed3 < number) {
+                    array.push(seed3);                
+                }
+                seed1 = seed2;
+                seed2 = seed3;
+                seed3 = seed1 + seed2;         
+            }
+            return array;
+        }
+        result = numberFibonacciPrime(number);
+        document.write(result);
     </script>
 </body>
 </html>
