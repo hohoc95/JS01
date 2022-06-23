@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //         Bài 1: Cho mảng a chỉ chứa các số nguyên
+        // Xây dựng mảng b là prefix sums của mảng a cụ thể theo công thức:
+        //   b[0]   = a[0]
+        //   b[1]   = a[0] + a[1]
+        //   b[2]   = a[0] + a[1] + a[2]
+        //   ...
+        //   b[n - 1] = a[0] + a[1] + ... + a[n - 1]
+        // với n là độ dài của mảng a.
+        // Ví dụ: Cho a = [1, 2, 3], thì kết quả prefixSums(a) = [1, 3, 6].
+        // Mảng b được tạo ra: [1, 1 + 2, 1 + 2 + 3] = [1, 3, 6]
+
+        // let arrayA = [1, 2, 3];
+        // let arrayB= [];
+        // let sum = 0;
+        // for(let i = 0; i < arrayA.length; i ++){
+        //     sum = sum + arrayA[i];
+        //     arrayB[i] = sum;
+        // }
+        // document.write(arrayB);
+
+        
+        // Bài 2: Cho 2 mảng A và B chứa số nguyên. 
+        // Tìm ra một mảng đã được sắp xếp chứa các phần tử xuất hiện trong mảng B 
+                                                            // nhưng lại không xuất hiện A
+        // Chú ý các phần tử giống nhau chỉ tính là 1 lần xuất hiện
+        // Ví dụ:  A=[7,2,5,3,5,3] và B=[7,2,5,4,6,3,5,3] thì kết quả missingValue(A, B) = [4, 6]
+
+        // let arrayA = [7,2,5,3,5,3];
+        // let arrayB = [7,2,5,4,6,3,5,3];
+        // let arrayC = [arrayA[0]];
+        // for(let i = 0; i < arrayA.length; i++){
+        //     let index = 0;
+        //     for(let j = 0; i < arrayC.length; j++){
+        //         if(arrayA[i] === arrayC[0]){
+        //             index++;
+        //         }
+        //     }
+        //     if (index === 0){
+        //         arrayC.push(arrayA[i]);
+        //     }
+        // }
+        // document.write(arrayC + '<br>');
+        
+        // let arrayD = [arrayB[0]];
+        // for(let i = 0; i < arrayB.length; i++){
+        //     let index1 = 0;
+        //     for(let j = 0; i < arrayD.length; j++){
+        //         if(arrayB[i] === arrayD[0]){
+        //             index1++;
+        //         }
+        //     }
+        //     if (index1 === 0){
+        //         arrayD.push(arrayB[i]);
+        //     }
+        // }
+        // document.write(arrayD + '<br>');
+
+
+        // let arrayE = [];
+        // for(let i = 0; i < arrayC.length; i++){
+        //     let index2 = 0;
+        //     for(let j = 0; i < arrayD.length; j++){
+        //         if(arrayC[i] === arrayD[j]){
+        //             index2++;
+        //         }
+        //     }
+        //     if (index2 === 0){
+        //         if(arrayC.length > 0){
+        //             arrayE.push(arrayC[i]);
+        //         }
+        //         else if(arrayD.length > 0){
+        //             arrayE.push(arrayD[j]);
+        //         }
+        //     }
+        // }
+        // //document.write(arrayE);
+
+
+        // function checkArray(arrayA, arrayB) {
+        //     let arrayC = [];
+        //     for (let i=0; i<arrayB.length; i++) {
+        //         let count = 0;
+        //         for (let j=0; j<arrayA.length; j++) {
+        //             if (arrayB[i] === arrayA[j]) {
+        //                 count++;
+        //             }
+        //         }
+        //         if (count === 0) {
+        //             arrayC.push(arrayB[i]);
+        //             arrayC.push(i);         //chỉ số chẵn chứa phần tử có ở B, k có ở A, 
+        //                                     // chỉ số lẻ chứa vị trí phần tử đứng trc ở mảng B.
+        //         }
+        //     }
+        //     document.write('arrayC: ' + arrayC + '<br>');
+
+        //     let arrayD = [];
+        //     arrayD[0] = arrayC[0];
+        //     for (let i=0; i<arrayC.length; i+=2) {
+        //         if (arrayC[i + 2] > arrayC[i] && arrayC[i + 1] + 1 === arrayC [i + 3] ) {
+        //             arrayD.push(arrayC[i + 2]);
+        //         }
+        //         else
+        //             if (arrayD.length>1) {
+        //                 return arrayD;
+        //             }
+        //             else {
+        //                 arrayD[0] = arrayC[i];
+        //             }
+        //     }
+        //     return "Không tìm thấy!"
+        // }
+        // let arrayA = [7,2,5,3,5,3];
+        // let arrayB = [7,2,5,4,6,8,3,5,3];
+        // document.write("Kết quả: " +checkArray(arrayA, arrayB));
+
+
+
+
+        // function checkArray(arrayA, arrayB) {
+        //     let arrayC = [];
+        //     for (let i=0; i<arrayB.length; i++) {
+        //         let count = 0;
+        //         for (let j=0; j<arrayA.length; j++) {
+        //             if (arrayB[i] === arrayA[j]) {
+        //                 count++;
+        //             }
+        //         }
+        //         if (count === 0) {
+        //             arrayC.push(arrayB[i]);
+        //         }
+        //     }
+        //     let max = arrayC[0];
+        //     for(let i = 0; i< arrayC.length; i++){
+        //         for(let j =0; j <=i; j++){
+        //             if(arrayC[i] < arrayC[j]){
+        //                 max = arrayC[i];
+        //                 arrayC[i] = arrayC[j];
+        //                 arrayC[j] = max
+        //             }
+        //             else if (arrayC[i] === arrayC[j]){
+        //                 while (i < 9) {
+        //                     let change = arrayC[i];
+        //                     arrayC[i] = arrayC[i +1];
+        //                     arrayC[i +1] = change;
+        //                     i++;
+        //                 }
+        //                 arrayC.pop(arrayC[i]);
+
+        //             }
+
+        //         } 
+        //     }
+        //     // let arrayD = arrayC;
+        //     // for(let i = 0; i< arrayC.length; i++){
+        //     //     for(let j =0; j <=i; j++){
+                    
+        //     //         if (arrayC[i] === arrayC[j]){
+        //     //             while (i < 9) {
+        //     //                 let change = arrayD[i];
+        //     //                 arrayD[i] = arrayD[i +1];
+        //     //                 arrayD[i +1] = change;
+        //     //                 i++;
+        //     //             }
+        //     //             arrayD.pop(arrayD[i]);
+
+        //     //         }
+        //     //     }
+            
+        //     // }
+        //     // document.write(arrayD + '<br>');  
+
+        //     return arrayC;
+        // }
+        // //let arrayA = [7,2,5,3,5,3];
+        // let arrayA = [];
+        // for(let i = 0; i < 5; i++){
+        //     arrayA[i] = parseInt(prompt('Nhập số nguyên vào mảng 1:'));
+        // }
+        // //let arrayB = [7,2,5,8,4,6,3,5,3];
+        // let arrayB = [];
+        // for(let i = 0; i < 9; i++){
+        //     arrayB[i] = parseInt(prompt('Nhập số nguyên vào mảng 2:'));
+        // }
+
+        // document.write(arrayA + '<br>' + '<br>');
+        // document.write(arrayB + '<br>' + '<br>');
+
+        // document.write("Kết quả: " +checkArray(arrayA, arrayB));
+
+ 
+        function checkArray(arrayA, arrayB) {
+            let arrayC = [];
+            for (let i=0; i<arrayB.length; i++) {
+                let count = 0;
+                for (let j=0; j<arrayA.length; j++) {
+                    if (arrayB[i] === arrayA[j]) {
+                        count++;
+                    }
+                }
+                if (count === 0) {
+                    arrayC.push(arrayB[i]);
+                }
+            }
+            let max = arrayC[0];
+            for(let i = 0; i< arrayC.length; i++){
+                for(let j =0; j <=i; j++){
+                    if(arrayC[i] < arrayC[j]){
+                        max = arrayC[i];
+                        arrayC[i] = arrayC[j];
+                        arrayC[j] = max
+                    }
+                    else if (arrayC[i] === arrayC[j]){
+                        
+                        while (i < 9) {
+                            let change = arrayC[i];
+                            arrayC[i] = arrayC[i +1];
+                            arrayC[i +1] = change;
+                            i++;
+                        }
+                        arrayC.pop(arrayC[i]);
+
+                    }
+
+                } 
+            }
+            
+            return arrayC;
+        }
+        //let arrayA = [7,2,5,3,5,3];
+        let arrayA = [];
+        for(let i = 0; i < 5; i++){
+            arrayA[i] = parseInt(prompt('Nhập số nguyên vào mảng 1:'));
+        }
+        //let arrayB = [7,2,5,8,4,6,3,5,3];
+        let arrayB = [];
+        for(let i = 0; i < 9; i++){
+            arrayB[i] = parseInt(prompt('Nhập số nguyên vào mảng 2:'));
+        }
+
+        document.write(arrayA + '<br>' + '<br>');
+        document.write(arrayB + '<br>' + '<br>');
+
+        document.write("Kết quả: " +checkArray(arrayA, arrayB));
+
+
+    </script>
+</body>
+</html>
