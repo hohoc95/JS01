@@ -196,60 +196,211 @@
         // document.write("Kết quả: " +checkArray(arrayA, arrayB));
 
  
-        function checkArray(arrayA, arrayB) {
-            let arrayC = [];
-            for (let i=0; i<arrayB.length; i++) {
-                let count = 0;
-                for (let j=0; j<arrayA.length; j++) {
-                    if (arrayB[i] === arrayA[j]) {
-                        count++;
-                    }
-                }
-                if (count === 0) {
-                    arrayC.push(arrayB[i]);
-                }
-            }
-            let max = arrayC[0];
-            for(let i = 0; i< arrayC.length; i++){
-                for(let j =0; j <=i; j++){
-                    if(arrayC[i] < arrayC[j]){
-                        max = arrayC[i];
-                        arrayC[i] = arrayC[j];
-                        arrayC[j] = max
-                    }
-                    else if (arrayC[i] === arrayC[j]){
+        // function checkArray(arrayA, arrayB) {
+        //     let arrayC = [];
+        //     for (let i=0; i<arrayB.length; i++) {
+        //         let count = 0;
+        //         for (let j=0; j<arrayA.length; j++) {
+        //             if (arrayB[i] === arrayA[j]) {
+        //                 count++;
+        //             }
+        //         }
+        //         if (count === 0) {
+        //             arrayC.push(arrayB[i]);
+        //         }
+        //     }
+        //     let max = arrayC[0];
+        //     for(let i = 0; i< arrayC.length; i++){
+        //         for(let j =0; j <=i; j++){
+        //             if(arrayC[i] < arrayC[j]){
+        //                 max = arrayC[i];
+        //                 arrayC[i] = arrayC[j];
+        //                 arrayC[j] = max
+        //             }
+        //             // else if (arrayC[i] === arrayC[j]){
                         
-                        while (i < 9) {
-                            let change = arrayC[i];
-                            arrayC[i] = arrayC[i +1];
-                            arrayC[i +1] = change;
-                            i++;
-                        }
-                        arrayC.pop(arrayC[i]);
+        //             //     while (i < 9) {
+        //             //         let change = arrayC[i];
+        //             //         arrayC[i] = arrayC[i +1];
+        //             //         arrayC[i +1] = change;
+        //             //         i++;
+        //             //     }
+        //             //     arrayC.pop(arrayC[i]);
+        //             // }
+        //         } 
+        //     }
+        //     return arrayC;
+        // }
+        // //let arrayA = [7,2,5,3,5,3];
+        // let arrayA = [];
+        // for(let i = 0; i < 5; i++){
+        //     arrayA[i] = parseInt(prompt('Nhập số nguyên vào mảng 1:'));
+        // }
+        // //let arrayB = [7,2,5,8,4,6,3,5,3];
+        // let arrayB = [];
+        // for(let i = 0; i < 9; i++){
+        //     arrayB[i] = parseInt(prompt('Nhập số nguyên vào mảng 2:'));
+        // }
 
-                    }
+        // document.write(arrayA + '<br>' + '<br>');
+        // document.write(arrayB + '<br>' + '<br>');
 
-                } 
-            }
+        // document.write("Kết quả: " +checkArray(arrayA, arrayB));
+
+
+        
+        // chuyển chuỗi nhập từ người dùng sang toàn bộ chữ thường (tolowerCase).
+        // Sau đó duyệt vòng lặp, những chữ đầu tiên của từ là chữ hoa.
+        // VD: Vũ Quang Đạt, chữ V là chữ đầu tiên (if chữ đầu tiên không có dấu cách).
+        // chữ Q (quang) là chữ trước dấu cách.
+        // Chữ Đ (đạt) là chữ trước dấu cách.
+
+        // let inputString = prompt('Nhập vào một chuỗi:');
+        // document.write('Chuỗi ban đầu: ' + inputString + '<br>')
+        // let newString = '';
+        // let stringA = inputString.toLowerCase().trim(); //chuyển chuổi đã nhập sang toàn bộ chữ thường
+        // document.write("chuỗi đang chạy: "+stringA+"<br>");
+        // newString  +=stringA[0].toUpperCase();
+        // for (i =1 ; i < stringA.length ; i++){
+        //     if (stringA[i] !== ' ' && stringA[i-1] === ' ') {
+        //         newString  +=stringA[i].toUpperCase();
+        //     }
+        //     else{
+        //         newString+=stringA[i];
+        //     }
+        // }
+        // document.write('Kết quả: ' + newString);
+
+        // Bài 1 Giải đề thi module 1.
+
+            // Kiểm tra được số lượng phần tử nhập vào <= 50
+            // do{
+            //     arrayNumbers = parseInt(prompt('Số phần tử của mảng: '))
+            // }
+            // while(!(arrayNumbers > 0 && arrayNumbers < 10 && arrayNumbers % 1 ==0 ))
             
-            return arrayC;
-        }
-        //let arrayA = [7,2,5,3,5,3];
-        let arrayA = [];
-        for(let i = 0; i < 5; i++){
-            arrayA[i] = parseInt(prompt('Nhập số nguyên vào mảng 1:'));
-        }
-        //let arrayB = [7,2,5,8,4,6,3,5,3];
-        let arrayB = [];
-        for(let i = 0; i < 9; i++){
-            arrayB[i] = parseInt(prompt('Nhập số nguyên vào mảng 2:'));
-        }
+            // // Thêm phần tử vào mảng
+            // let array = [];
+            // for(let i = 0; i < arrayNumbers; i++){
+            //     array[i] = parseInt(prompt('Nhập vào phần tử của mảng'));
+            // }
+            // // Hiển thị được mảng
+            // document.write(array + '<br>');
 
-        document.write(arrayA + '<br>' + '<br>');
-        document.write(arrayB + '<br>' + '<br>');
+            // // Hiển thị được: kết quả trung bình của các phần tử chia hết cho 5 ở vị trí chia hết cho 3
 
-        document.write("Kết quả: " +checkArray(arrayA, arrayB));
+            // //let average = 0;
+            // let count = 0;
+            // let sum = 0;
 
+            // for(let i = 0; i < arrayNumbers; i += 3){
+            //     if(array[i] % 5 === 0){
+            //         sum += array[i];
+            //         count++;
+            //     }
+            // }
+            // document.write('Số phần tử chia hết cho 5 ở vị trí chia hết cho 3 là: ' + count + '<br>');
+            // document.write('Trung bình cộng của các phần tử chia hết cho 5 ở vị trí chia hết cho 3: ' + sum/count);
+            
+
+        // Bài 2 Giải đề thi module 1
+            // Khai báo được hàm có tham số truyền vào
+            // let string = prompt('');
+
+            // // Hiển thị được kết quả
+            // document.write(string + '<br>');
+            
+            // // Dùng thuật toán lấy được cụm từ viết hoa.
+            // let resultString = '';
+            
+            // //Fdsfsdf Sfdss Adfssf
+            // let index = 0;
+            // for(let i = 0; i < string.length; i++){
+            //     if(string[i] !== ' ' && ( string[i - 1] === ' ' || string[i -1] === undefined)){
+            //         resultString.push(string[i].toUpperCase());
+            //     }
+            // }
+            // document.write(resultString);
+
+        // Bài 3 Giải đề thi module 1
+            // Khai báo được hàm có tham số truyền vào
+        // function checkArray(array) {
+        //     let array = [];
+        //     let arrayLength = prompt('Nhập vào độ dài mảng');
+        //     for(let i = 0; i <arrayLength; i++){
+        //         array[i] = parseInt(prompt('Nhập số vào mảng'));
+        //     }
+        //     array.sort(function(a,b){
+        //         return a - b;
+        //     })
+        //     document.write('Mảng đã nhập: ' + array + '<br>');
+
+        //     //Hàm trả được về một mảng các số fibonaci
+
+        //     let arrFibonaci = [0,1];
+        //     let number1 = 0;
+        //     let number2 = 1;
+        //     let number3 = 1;
+        //     for(let i = 0; i < array[arrayLength -1]; i++){
+        //         number1 = number2;
+        //         number2 = number3;
+        //         number3 = number1 + number2;
+        //         if(number3 <= array[arrayLength -1]){
+        //             arrFibonaci.push(number3);
+        //         }
+        //     }
+        //     document.write('Mảng fibonaci: ' + arrFibonaci + '<br>');
+
+        //     let resultArray = [];
+        //     for(let i = 0; i < arrayLength; i++){
+        //         if(array.includes(arrFibonaci[i])){
+        //             resultArray.push(arrFibonaci[i]);
+        //         }
+        //     }
+        //     return document.write('Mảng số fibonaci được tìm thấy trong mảng: ' + resultArray + '<br>')
+        // }
+
+        // checkArray(array);
+
+        // Bài 4 Giải đề thi module 1
+
+        class BankAccount{
+            constructor(id, nameAccount, nameBank, totalAccount){
+                this.id = id;
+                this.nameAccount = nameAccount;
+                this.nameBank = nameBank;
+                this.totalAccount = totalAccount;
+            }
+            getId(){
+                return this.id;
+            }
+            setId(id){
+                this.id = id;
+            }            
+            getNameAccount(){
+                return this.nameAccount;
+            }
+            setNameAccount(nameAccount){
+                this.nameAccount = nameAccount;
+            }            
+            getNameBanck(){
+                return this.nameBank;
+            }
+            setNameBank(nameBank){
+                this.nameBank = nameBank;
+            }            
+            getTotalAccount(){
+                return this.totalAccount;
+            }
+            setTotalAccount(totalAccount){
+                this.totalAccount = totalAccount;
+            }
+            toString(){
+                return 'ID: ' +  this.getId() + '<br>' + 'Tên chủ tài khoản: ' + this.getNameAccount() + '<br>' + 'Tên ngân hàng: ' + this.getNameBanck() + '<br>' + 'Tổng số tiền trong tài khoản: ' + this.getTotalAccount() + ' VND';
+            }
+        }
+        let account = new BankAccount ('012345','Fall in Love', 'VietcomBank', 2000000)
+        document.write(account.toString())
 
     </script>
 </body>
