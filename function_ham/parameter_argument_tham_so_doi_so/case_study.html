@@ -305,22 +305,32 @@
 
         // Bài 2 Giải đề thi module 1
             // Khai báo được hàm có tham số truyền vào
-            // let string = prompt('');
+        function checkString()
+        {
+            let string = prompt('');
 
-            // // Hiển thị được kết quả
-            // document.write(string + '<br>');
+            // Hiển thị được kết quả
+            document.write(string + '<br>');
             
-            // // Dùng thuật toán lấy được cụm từ viết hoa.
-            // let resultString = '';
+            // Dùng thuật toán lấy được cụm từ viết hoa.
+            let resultString = '';
             
-            // //Fdsfsdf Sfdss Adfssf
-            // let index = 0;
-            // for(let i = 0; i < string.length; i++){
-            //     if(string[i] !== ' ' && ( string[i - 1] === ' ' || string[i -1] === undefined)){
-            //         resultString.push(string[i].toUpperCase());
-            //     }
-            // }
-            // document.write(resultString);
+            //Fdsfsdf Sfdss Adfssf
+            let index = 0;
+            for(let i = 0; i < string.length; i++){
+                if(string[i] !== ' ' && ( string[i - 1] === ' ' || string[i -1] === undefined)){
+                    resultString.push(string[i].toUpperCase());
+                    index++;
+                }
+            }
+            if(index > 1){
+                document.write(resultString);
+            }
+            else{
+                document.write('Chuỗi chỉ có 1 từ nên không cần viết tắc');
+            }
+        }
+
 
         // Bài 3 Giải đề thi module 1
             // Khai báo được hàm có tham số truyền vào
@@ -364,43 +374,43 @@
 
         // Bài 4 Giải đề thi module 1
 
-        class BankAccount{
-            constructor(id, nameAccount, nameBank, totalAccount){
-                this.id = id;
-                this.nameAccount = nameAccount;
-                this.nameBank = nameBank;
-                this.totalAccount = totalAccount;
-            }
-            getId(){
-                return this.id;
-            }
-            setId(id){
-                this.id = id;
-            }            
-            getNameAccount(){
-                return this.nameAccount;
-            }
-            setNameAccount(nameAccount){
-                this.nameAccount = nameAccount;
-            }            
-            getNameBanck(){
-                return this.nameBank;
-            }
-            setNameBank(nameBank){
-                this.nameBank = nameBank;
-            }            
-            getTotalAccount(){
-                return this.totalAccount;
-            }
-            setTotalAccount(totalAccount){
-                this.totalAccount = totalAccount;
-            }
-            toString(){
-                return 'ID: ' +  this.getId() + '<br>' + 'Tên chủ tài khoản: ' + this.getNameAccount() + '<br>' + 'Tên ngân hàng: ' + this.getNameBanck() + '<br>' + 'Tổng số tiền trong tài khoản: ' + this.getTotalAccount() + ' VND';
-            }
-        }
-        let account = new BankAccount ('012345','Fall in Love', 'VietcomBank', 2000000)
-        document.write(account.toString())
+        // class BankAccount{
+        //     constructor(id, nameAccount, nameBank, totalAccount){
+        //         this.id = id;
+        //         this.nameAccount = nameAccount;
+        //         this.nameBank = nameBank;
+        //         this.totalAccount = totalAccount;
+        //     }
+        //     getId(){
+        //         return this.id;
+        //     }
+        //     setId(id){
+        //         this.id = id;
+        //     }            
+        //     getNameAccount(){
+        //         return this.nameAccount;
+        //     }
+        //     setNameAccount(nameAccount){
+        //         this.nameAccount = nameAccount;
+        //     }            
+        //     getNameBanck(){
+        //         return this.nameBank;
+        //     }
+        //     setNameBank(nameBank){
+        //         this.nameBank = nameBank;
+        //     }            
+        //     getTotalAccount(){
+        //         return this.totalAccount;
+        //     }
+        //     setTotalAccount(totalAccount){
+        //         this.totalAccount = totalAccount;
+        //     }
+        //     toString(){
+        //         return 'ID: ' +  this.getId() + '<br>' + 'Tên chủ tài khoản: ' + this.getNameAccount() + '<br>' + 'Tên ngân hàng: ' + this.getNameBanck() + '<br>' + 'Tổng số tiền trong tài khoản: ' + this.getTotalAccount() + ' VND';
+        //     }
+        // }
+        // let account = new BankAccount ('012345','Fall in Love', 'VietcomBank', 2000000)
+        // document.write(account.toString())
 
     </script>
 </body>
